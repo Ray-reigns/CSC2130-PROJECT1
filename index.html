@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketWise | Financial Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h2>PocketWise</h2>
+    <nav>
+        <a href="#" class="active">Dashboard</a>
+        <a href="#transactions">Transactions</a>
+        <a href="#reports">Reports</a>
+    </nav>
+      <p style="text-align: center;">
+  Don't have an account?<br>
+ <a href="register.html">Register here</a>
+   </p>
+   
+    <div class="profile" id="accountStatus">Not logged in</div>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <div>
+            <h1>Financial Dashboard</h1>
+            <p>Manage your money wisely.</p>
+        </div>
+        <button id="addBtn">+ Add Transaction</button>
+    </section>
+
+    <section class="content" id="loginPanel">
+        <h2>Login to PocketWise</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email address" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </section>
+
+    <section class="content" id="transactionForm" hidden>
+        <h2>Add New Transaction</h2>
+        <form id="addTransactionForm">
+            <select id="type" required>
+                <option value="">Select transaction type</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+
+            <input type="number" id="amount" placeholder="Amount (KSh)" min="0.01" step="0.01" required>
+
+            <input type="text" id="category" placeholder="Category e.g. Salary" required>
+
+            <input type="text" id="description" placeholder="Description">
+
+            <input type="date" id="transactionDate">
+
+            <button type="submit">Save Transaction</button>
+            <button type="button" id="cancelBtn">Cancel</button>
+        </form>
+        <p id="transactionMessage"></p>
+    </section>
+
+    <section class="summary">
+        <div class="card">
+            <p>Total Balance</p>
+            <h2 id="balance">KSh 0.00</h2>
+        </div>
+        <div class="card">
+            <p>Total Income</p>
+            <h2 id="income">KSh 0.00</h2>
+        </div>
+        <div class="card">
+            <p>Total Expenses</p>
+            <h2 id="expenses">KSh 0.00</h2>
+        </div>
+    </section>
+
+    <section class="content" id="transactions">
+        <h2>Recent Transactions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="transactionList">
+                <tr>
+                    <td colspan="4">Login to view your transactions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="content" id="reports">
+        <h2>Financial Reports</h2>
+        <p>Your financial reports will appear here.</p>
+    </section>
+
+</main>
+
+</body>
+</html>
